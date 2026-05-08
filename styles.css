@@ -55,7 +55,10 @@ header {
     padding-left: 24px;
     padding-right: 24px;
 }
-
+.contatti-grid {
+    grid-template-columns: 1fr;
+    max-width: 560px;
+}
 .logo {
     font-family: 'Lora', serif;
     font-size: 26px;
