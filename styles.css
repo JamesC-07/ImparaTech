@@ -58,6 +58,7 @@ header {
 .contatti-grid {
     grid-template-columns: 1fr;
     max-width: 560px;
+    margin: 0 auto;
 }
 .logo {
     font-family: 'Lora', serif;
