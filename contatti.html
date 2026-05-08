@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contatti – ImparaTech</title>
+    <meta name="description" content="Contatta ImparaTech per iniziare le tue lezioni di informatica. Prima sessione gratuita, nessun impegno.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        .page-hero {
+            background: linear-gradient(135deg, var(--verde) 0%, var(--verde-chiaro) 100%);
+            padding: 56px 0 48px;
+            color: white;
+            text-align: center;
+        }
+        .page-hero h1 {
+            font-family: 'Lora', serif;
+            font-size: 42px;
+            margin-bottom: 12px;
+        }
+        .page-hero p {
+            font-size: 19px;
+            opacity: 0.9;
+        }
+
+        .contatti-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        @media (max-width: 760px) {
+            .contatti-grid { grid-template-columns: 1fr; gap: 40px; }
+        }
+
+        .contatto-info h2 {
+            font-family: 'Lora', serif;
+            font-size: 28px;
+            color: var(--verde);
+            margin-bottom: 18px;
+        }
+
+        .contatto-info p {
+            color: var(--testo-morbido);
+            margin-bottom: 32px;
+            line-height: 1.7;
+        }
+
+        .contatto-voce {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 18px 0;
+            border-bottom: 1px solid var(--bordo);
+        }
+
+        .contatto-voce:last-child { border-bottom: none; }
+
+        .contatto-voce .icona {
+            background: var(--verde-sfondo);
+            color: var(--verde);
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+
+        .contatto-voce .testo strong {
+            display: block;
+            font-size: 15px;
+            color: var(--testo);
+            margin-bottom: 2px;
+        }
+
+        .contatto-voce .testo a,
+        .contatto-voce .testo span {
+            font-size: 17px;
+            color: var(--verde);
+            text-decoration: none;
+        }
+
+        .contatto-voce .testo a:hover { text-decoration: underline; }
+
+        /* Form */
+        .form-box {
+            background: var(--verde-sfondo);
+            border: 1px solid var(--bordo);
+            border-radius: 8px;
+            padding: 36px 32px;
+        }
+
+        .form-box h2 {
+            font-family: 'Lora', serif;
+            font-size: 24px;
+            color: var(--verde);
+            margin-bottom: 6px;
+        }
+
+        .form-box .sub {
+            font-size: 15px;
+            color: var(--testo-morbido);
+            margin-bottom: 28px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--testo);
+            margin-bottom: 7px;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid var(--bordo);
+            border-radius: 5px;
+            font-family: 'Source Sans 3', sans-serif;
+            font-size: 16px;
+            color: var(--testo);
+            background: white;
+            transition: border-color 0.2s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--verde);
+        }
+
+        .form-group textarea {
+            height: 110px;
+            resize: vertical;
+        }
+
+        .form-submit {
+            width: 100%;
+            background: var(--verde);
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: 'Source Sans 3', sans-serif;
+            font-size: 17px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .form-submit:hover { background: var(--verde-accent); }
+
+        .nota-gratuita {
+            background: white;
+            border: 1px solid var(--bordo);
+            border-left: 4px solid var(--verde);
+            padding: 16px 20px;
+            border-radius: 0 6px 6px 0;
+            font-size: 15px;
+            color: var(--testo-morbido);
+            margin-top: 16px;
+        }
+
+        .nota-gratuita strong { color: var(--verde); }
+
+        .successo {
+            display: none;
+            background: var(--verde);
+            color: white;
+            padding: 20px 24px;
+            border-radius: 6px;
+            text-align: center;
+            font-size: 17px;
+            margin-top: 16px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="navbar">
+        <a href="index.html" class="logo">Impara<span>Tech</span></a>
+        <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+        <nav>
+            <ul id="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="contenuti.html">Cosa imparo</a></li>
+                <li><a href="contatti.html" class="active">Contatti</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<div class="page-hero">
+    <div class="container">
+        <h1>Contattami</h1>
+        <p>La prima sessione è gratuita. Nessun impegno.</p>
+    </div>
+</div>
+
+<section>
+    <div class="container">
+        <div class="contatti-grid">
+
+            <div class="contatto-info">
+                <h2>Come raggiungermi</h2>
+                <p>Scrivi per qualsiasi domanda: quale modulo fa per te, come funzionano le lezioni, o solo per capire se ImparaTech fa al caso tuo. Rispondo entro 24 ore.</p>
+
+                <div class="contatto-voce">
+                    <div class="icona"><i class="fa-solid fa-envelope"></i></div>
+                    <div class="testo">
+                        <strong>Email</strong>
+                        <a href="mailto:info@imparatech.it">info@imparatech.it</a>
+                    </div>
+                </div>
+
+                <div class="contatto-voce">
+                    <div class="icona"><i class="fa-brands fa-whatsapp"></i></div>
+                    <div class="testo">
+                        <strong>WhatsApp</strong>
+                        <a href="https://wa.me/39XXXXXXXXXX" target="_blank">Scrivimi su WhatsApp</a>
+                    </div>
+                </div>
+
+                <div class="contatto-voce">
+                    <div class="icona"><i class="fa-solid fa-clock"></i></div>
+                    <div class="testo">
+                        <strong>Risposta</strong>
+                        <span>Entro 24 ore (giorni feriali)</span>
+                    </div>
+                </div>
+
+                <div class="contatto-voce">
+                    <div class="icona"><i class="fa-solid fa-video"></i></div>
+                    <div class="testo">
+                        <strong>Lezioni</strong>
+                        <span>Online via Google Meet o Zoom</span>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <div class="form-box">
+                    <h2>Mandami un messaggio</h2>
+                    <p class="sub">Compila il modulo e ti rispondo al più presto.</p>
+
+                    <div class="form-group">
+                        <label for="nome">Il tuo nome</label>
+                        <input type="text" id="nome" placeholder="Es. Mario Rossi">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="la-tua@email.it">
+                    </div>
+                    <div class="form-group">
+                        <label for="modulo">Quale modulo ti interessa?</label>
+                        <select id="modulo">
+                            <option value="">— Scegli un'opzione —</option>
+                            <option>Competenze digitali di base</option>
+                            <option>Sicurezza informatica</option>
+                            <option>Uso dell'intelligenza artificiale</option>
+                            <option>Non lo so ancora</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="messaggio">Messaggio (facoltativo)</label>
+                        <textarea id="messaggio" placeholder="Hai domande specifiche? Raccontami brevemente la tua situazione..."></textarea>
+                    </div>
+                    <button class="form-submit" onclick="inviaForm()">Invia messaggio</button>
+                    <div class="successo" id="successo">✅ Messaggio inviato! Ti rispondo entro 24 ore.</div>
+                </div>
+                <div class="nota-gratuita">
+                    <strong>Ricorda:</strong> la prima sessione è completamente gratuita. Parliamo dei tuoi obiettivi e vedi come funziona — senza dover decidere nulla subito.
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="contenuti.html">Cosa imparo</a></li>
+            <li><a href="contatti.html">Contatti</a></li>
+        </ul>
+        <p>© 2025 ImparaTech · Lezioni di informatica per adulti</p>
+    </div>
+</footer>
+
+<script>
+function toggleMenu() {
+    document.getElementById('nav-menu').classList.toggle('open');
+}
+
+function inviaForm() {
+    const nome = document.getElementById('nome').value.trim();
+    const email = document.getElementById('email').value.trim();
+    if (!nome || !email) {
+        alert('Inserisci almeno nome e email.');
+        return;
+    }
+    document.getElementById('successo').style.display = 'block';
+    // Qui andrà l'integrazione con il tuo servizio email (es. Formspree, EmailJS)
+}
+</script>
+</body>
+</html>

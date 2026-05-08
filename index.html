@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ImparaTech – La tecnologia spiegata semplice</title>
+    <meta name="description" content="ImparaTech: lezioni di informatica pratiche e chiare per adulti. Impara a usare il computer, navigare in sicurezza e capire l'intelligenza artificiale.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<header>
+    <div class="navbar">
+        <a href="index.html" class="logo">Impara<span>Tech</span></a>
+        <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+        <nav>
+            <ul id="nav-menu">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="contenuti.html">Cosa imparo</a></li>
+                <li><a href="contatti.html">Contatti</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="container">
+        <h1>La tecnologia<br>spiegata semplice</h1>
+        <p>Lezioni pratiche, una alla volta, per chi vuole capire il mondo digitale senza stress.</p>
+        <a href="contenuti.html" class="btn">Scopri i moduli</a>
+        <a href="contatti.html" class="btn btn-outline">Contattami</a>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <div class="section-title">Come funziona</div>
+        <p class="section-sub">Un percorso pensato per chi parte da zero. Niente gergo tecnico, solo pratica concreta.</p>
+        <div class="cards">
+            <div class="card">
+                <div class="card-icon">🎯</div>
+                <h3>1 ora a settimana</h3>
+                <p>Una sessione individuale con me ogni settimana. Lavoriamo sul tuo ritmo, sui tuoi obiettivi, sui tuoi dispositivi.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">📚</div>
+                <h3>Materiale incluso</h3>
+                <p>Ricevi schede e guide chiare da consultare in autonomia tra una lezione e l'altra. Niente da comprare.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">💬</div>
+                <h3>Sempre disponibile</h3>
+                <p>Hai una domanda durante la settimana? Scrivimi. Rispondo e ti aiuto senza aspettare la lezione successiva.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">📅</div>
+                <h3>100€ al mese</h3>
+                <p>Tutto incluso: lezioni, materiale e supporto. Il primo mese inizia con una sessione di valutazione gratuita.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="grigio">
+    <div class="container">
+        <div class="section-title">Tre moduli pratici</div>
+        <p class="section-sub">Ogni modulo dura 2–3 mesi. Puoi fermati dopo il primo, o continuare fino a padroneggiare tutto.</p>
+        <div class="cards">
+            <div class="card">
+                <div class="card-icon">💻</div>
+                <h3>Competenze digitali di base</h3>
+                <p>Computer, smartphone, email, file, internet. Tutto quello che serve per muoversi con sicurezza nel quotidiano.</p>
+                <br>
+                <a href="contenuti.html#base" style="color: var(--verde); font-weight:600; font-size:15px;">Scopri il modulo →</a>
+            </div>
+            <div class="card">
+                <div class="card-icon">🔒</div>
+                <h3>Sicurezza informatica</h3>
+                <p>Come proteggere i tuoi dati, riconoscere le truffe online, usare password sicure e navigare senza rischi.</p>
+                <br>
+                <a href="contenuti.html#sicurezza" style="color: var(--verde); font-weight:600; font-size:15px;">Scopri il modulo →</a>
+            </div>
+            <div class="card">
+                <div class="card-icon">🤖</div>
+                <h3>Uso dell'intelligenza artificiale</h3>
+                <p>Cosa è l'AI, come usarla nella vita di tutti i giorni, cosa può fare per te e cosa non può fare.</p>
+                <br>
+                <a href="contenuti.html#ai" style="color: var(--verde); font-weight:600; font-size:15px;">Scopri il modulo →</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container" style="text-align:center;">
+        <div class="section-title">Pronto a iniziare?</div>
+        <p class="section-sub" style="margin-left:auto; margin-right:auto; text-align:center;">La prima sessione è gratuita. Nessun impegno, nessuna fretta.</p>
+        <a href="contatti.html" class="btn" style="background: var(--verde); color: white; font-size:18px; padding: 16px 44px;">Scrivimi ora</a>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="contenuti.html">Cosa imparo</a></li>
+            <li><a href="contatti.html">Contatti</a></li>
+        </ul>
+        <p>© 2025 ImparaTech · Lezioni di informatica per adulti</p>
+    </div>
+</footer>
+
+<script>
+function toggleMenu() {
+    document.getElementById('nav-menu').classList.toggle('open');
+}
+</script>
+</body>
+</html>
